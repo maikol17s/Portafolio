@@ -1,0 +1,308 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Secciones */
+section {
+    scroll-margin-top: 90px;
+    padding: 80px 0; /* Separación entre secciones */
+    min-height: 100vh; /* Cada sección ocupa al menos el 100% de la altura de la pantalla */
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Home - Animación de escritura corregida */
+#home {
+    background-color: #f8f9fa; /* Fondo claro para la sección home */
+}
+
+.dark-theme #home {
+    background-color: #2d2d2d; /* Fondo oscuro para la sección home */
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.typing-container {
+    position: relative;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin-bottom: 30px;
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+}
+
+.dark-theme .typing-container {
+    color: #ffffff;
+}
+
+.word {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    margin-right: 1rem; /* Espacio entre palabras */
+    position: relative; /* Para posicionar el pseudo-elemento */
+}
+
+#word1 {
+    width: 0;
+    animation: typing1 1.5s forwards;
+}
+
+#word2 {
+    width: 0;
+    opacity: 0;
+    animation: typing2 1s 1.6s forwards;
+}
+
+#word3 {
+    width: 0;
+    opacity: 0;
+    animation: typing3 2s 2.7s forwards;
+}
+
+/* Línea (cursor) */
+.word::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -0.5rem; /* Separación de la palabra */
+    width: 3px;
+    height: 100%;
+    background-color: #000000; /* Color de la línea */
+    animation: blink-cursor 0.7s infinite;
+    opacity: 0; /* Inicialmente invisible */
+}
+
+.dark-theme .word::after {
+    background-color: #ffffff; /* Color de la línea en modo oscuro */
+}
+
+/* Mostrar la línea solo cuando la palabra esté visible */
+#word1::after {
+    animation-delay: 1.5s; /* Esperar a que termine la animación de #word1 */
+}
+
+#word2::after {
+    animation-delay: 2.6s; /* Esperar a que termine la animación de #word2 */
+}
+
+#word3::after {
+    animation-delay: 4.7s; /* Esperar a que termine la animación de #word3 */
+}
+
+@keyframes typing1 {
+    from { width: 0; }
+    to { width: 9.3ch; } /* Ancho para "Analyst" */
+}
+
+@keyframes typing2 {
+    from { 
+        width: 0;
+        opacity: 1;
+    }
+    to { 
+        width: 3.5ch; /* Ancho para "and" */
+        opacity: 1;
+    }
+}
+
+@keyframes typing3 {
+    from { 
+        width: 0;
+        opacity: 1;
+    }
+    to { 
+        width: 15ch; /* Ajustamos el ancho para "Developer" */
+        opacity: 1;
+    }
+}
+
+/* Animación de parpadeo */
+@keyframes blink-cursor {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 600px;
+}
+
+.dark-theme .text-content p {
+    color: #cccccc;
+}
+
+.image-placeholder img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* About */
+#about {
+    background-color: #ffffff; /* Fondo claro para la sección about */
+}
+
+.dark-theme #about {
+    background-color: #1a1a1a; /* Fondo oscuro para la sección about */
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: justify;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #00d5f6;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Projects */
+#projects {
+    background-color: #f8f9fa; /* Fondo claro para la sección projects */
+}
+
+.dark-theme #projects {
+    background-color: #2d2d2d; /* Fondo oscuro para la sección projects */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .project-card {
+    background: #2d2d2d;
+}
+
+/* Contact */
+#contact {
+    background-color: #ffffff; /* Fondo claro para la sección contact */
+}
+
+.dark-theme #contact {
+    background-color: #1a1a1a; /* Fondo oscuro para la sección contact */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.contact-form button {
+    background-color: #00d5f6;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #00bcd4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 80px auto 60px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .typing-container {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #word1 {
+        animation: typing1 1s forwards;
+    }
+    
+    #word2 {
+        animation: typing2 0.4s 1s forwards;
+    }
+    
+    #word3 {
+        animation: typing3 1.2s 1.4s forwards;
+    }
+}
+
+@media (max-width: 480px) {
+    .typing-container {
+        font-size: 2rem;
+    }
+}

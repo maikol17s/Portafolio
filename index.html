@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Maikol García</title>
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/section.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <a href="#home"><img src="/assets/img/Logo.png" alt="Logo"></a>
+            </div>
+            <div class="control-buttons">
+                <!-- <button id="theme-toggle" class="theme-btn">🌓</button> -->
+                <button id="language-toggle" class="lang-btn">ES</button>
+            </div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" data-key="home">HOME</a></li>
+            <li><a href="#about" data-key="about">ABOUT ME</a></li>
+            <li><a href="#projects" data-key="projects">PROJECTS</a></li>
+            <li><a href="#contact" data-key="contact">CONTACT</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <!-- Secciones -->
+    <section id="home">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="typing-container">
+                        <br class="typing-line" data-key="mainTitle">
+                        <span class="word" data-key="mainTitle1" id="word1">ANALYST</span><br>
+                        <span class="word" data-key="mainTitle2" id="word2">AND</span><br>
+                        <span class="word" data-key="mainTitle3" id="word3">DEVELOPER</span>
+                        </span>
+                    </div>
+                    <p id="content" class="visible" data-key="subTitle">
+                        Backend - Front-end
+                    </p>
+                </div>
+                <div class="image-placeholder">
+                    <img src="/assets/img/portada.png" alt="Imagen de presentación">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-key="aboutTitle">Acerca de Mí</h2>
+            <div class="about-content">
+                <div class="bio">
+                    <p data-key="bioText">SY Analista de Software, me especializo en el diseño, análisis y desarrollo
+                        de soluciones tecnológicas adaptadas a distintas industrias. Mi enfoque
+                        profesional se orienta hacia la meticulosa recolección y análisis de requisitos
+                        funcionales y técnicos, con el objetivo de asegurar la calidad y eficiencia en
+                        la implementación de sistemas informáticos. Poseo una base sólida en
+                        lenguajes de programación y bases de datos, complementada con una
+                        profunda comprensión de las metodologías ágiles, lo que me habilita para
+                        trabajar de manera efectiva en equipos multidisciplinarios y aportar
+                        soluciones que satisfacen las necesidades específicas de los clientes.
+                        Destaco en la habilidad de convertir los requerimientos de los usuarios en
+                        especificaciones técnicas precisas, aplicando herramientas de modelado
+                        como UML y elaborando documentación clara y concisa para facilitar la labor
+                        de los equipos de desarrollo.
+                    </p>
+                </div>
+                <div class="skills">
+                    <h3 data-key="skillsTitle">Habilidades</h3>
+                    <ul class="skills-list">
+                        <li data-key="skill1">HTML5</li>
+                        <li data-key="skill2">CSS3</li>
+                        <li data-key="skill3">JavaScript</li>
+                        <li data-key="skill4">JAVA</li>
+                        <li data-key="skill5">PYTHON</li>
+                        <li data-key="skill6">SQL</li>
+                        <li data-key="skill7">Git</li>
+                        <li data-key="skill8">GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 data-key="projectsTitle">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/assets/img/project1.jpg" alt="Proyecto 1">
+                    <h3 data-key="project1Title">Technological Inventory Platform</h3>
+                    <p data-key="project1Desc">Plataforma de manejo de inventario en laravel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-key="contactTitle">Contacto</h2>
+            <form class="contact-form">
+                <input type="text" data-key="namePlaceholder" placeholder="Nombre" required>
+                <input type="email" data-key="emailPlaceholder" placeholder="Email" required>
+                <textarea data-key="messagePlaceholder" placeholder="Mensaje" rows="5" required></textarea>
+                <button type="submit" class="submit-btn" data-key="submitButton">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="p1">&copy; Copyright <span id="current-year"></span>. <span data-key="createdBy">Creado por</span>
+            Maikol Garcia.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/language.js"></script>
+    <script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/welcome.js"></script>
+    <script>
+        // Año actual
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
